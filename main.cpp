@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
 QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); //изменения
 QApplication app(argc, argv);
-Win win(0);
+Win win;
 win.show();
 return app.exec();
 }
