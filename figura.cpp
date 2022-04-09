@@ -1,13 +1,13 @@
 
 #include <math.h>
 #include "figura.h"
-void Figura::move(float Alpha,QPainter *Painter)
+void Figura::move(float Alpha,QPainter *Painter) //Метод смещения фигуры
 {
 dx=halflen*cos(Alpha);
 dy=halflen*sin(Alpha);
 draw(Painter);
 }
-void MyLine::draw(QPainter *Painter)
+void MyLine::draw(QPainter *Painter)            //Метод раскраски фигуры обекта *Painter
 {
 Painter->drawLine(x+dx,y+dy,x-dx,y-dy);
 }

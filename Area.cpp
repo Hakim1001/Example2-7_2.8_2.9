@@ -9,29 +9,28 @@ alpha=0;
 }
 void Area::showEvent(QShowEvent *)
 {
-myTimer=startTimer(50); // создать таймер
+myTimer=startTimer(50);                     // создать таймер
 }
-void Area::paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)    //Метод раскраски обьекта painter
 {
 QPainter painter(this);
 painter.setPen(Qt::red);
-myline->move(alpha,&painter);
+myline->move(alpha,&painter);          //Смещение на alpha
 myrect->move(alpha*(-0.5),&painter);
 }
 void Area::timerEvent(QTimerEvent *event)
 {
-if (event->timerId() == myTimer) // если наш таймер
+if (event->timerId() == myTimer)      // если наш таймер
 {
 alpha=alpha+0.2;
-update(); // обновить внешний вид
+update();                            // обновить внешний вид
 }
 else
-QWidget::timerEvent(event); // иначе передать для стандартной
-// обработки
+QWidget::timerEvent(event);        // иначе передать для стандартной обработки
 }
 void Area::hideEvent(QHideEvent *)
 {
-killTimer(myTimer); // уничтожить таймер
+killTimer(myTimer);                     // уничтожить таймер
 }
 Area::~Area()
 {
